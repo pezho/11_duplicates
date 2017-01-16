@@ -1,6 +1,7 @@
 # Anti-Duplicator
 
-[TODO. There will be project description]
+Поиск дубликатов файлов в папке (рекурсивно)
+Дубликаты – это два файла с одинаковым именем и размером.
 
 # Project Goals
 
