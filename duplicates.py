@@ -3,7 +3,7 @@ from collections import defaultdict
 import os
 
 
-def get_all_files(path):
+def get_dict_with_duplicates(path):
     all_files = defaultdict(list)
     for root, dirs, files in os.walk(path):
         for file in files:
@@ -15,11 +15,11 @@ def get_all_files(path):
 def main():
     path = input('Enter directory (.): ') or '.'
     print('Duplicates:')
-    for key, value in get_all_files(path).items():
-        if len(value) > 1:
+    for key, files in get_dict_with_duplicates(path).items():
+        if len(files) > 1:
             print('Find {} duplicates of file {}'.format(
-                    len(value), os.path.basename(key[1])), 
-                    '\n\t'.join(value), sep='\n\t')
+                    len(files), os.path.basename(key[1])), 
+                    '\n\t'.join(files), sep='\n\t')
 
 
 if __name__ == '__main__':
